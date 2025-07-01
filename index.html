@@ -8,11 +8,18 @@
   <link rel="stylesheet" data-purpose="Layout StyleSheet" title="Web Awesome"
     href="/css/app-wa-86cd56275caec687041f80b17dc62e32.css?vsn=d">
 
-  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">\
   <title>So-Do Forum</title>
+  <style>
+    h1,
+    h2 {
+      color: #12132D;
+
+    }
+  </style>
 </head>
 
-<body>
+<body class="space-y-16">
   <header class="mx-auto max-w-6xl">
     <nav class="flex items-center justify-between my-6 p-4">
       <div>
@@ -41,7 +48,7 @@
     <div
       class="flex justify-center items-center gap-32 bg-[url('../images/bgbanner.png')] w-full bg-no-repeat h-[500px] bg-bottom bg-[#12132D] rounded-[32px] p-24">
       <div class="space-y-10">
-        <h1 class="text-[64px] leading-[86px] font-black text-white">Welcome to the <span
+        <h1 class="text-[64px] leading-[86px] font-black !text-white">Welcome to the <span
             class="text-sky-500">S</span><span class="text-sky-600">o</span>-<span class="text-sky-700">D</span><span
             class="text-sky-800">o</span> Forum</h1>
         <p class="mt-4 text-lg text-gray-300">Join the conversation and share your thoughts <br> with like-minded
@@ -63,6 +70,61 @@
     </div>
 
   </header>
+
+  <main class="mx-auto max-w-6xl">
+    <section>
+      <div class="flex flex-col items-center justify-center space-y-4">
+        <h1 class="text-5xl font-black text-center">Let's Discuss</h1>
+        <p class="text-gray-500 text-center max-w-xl text-lg">Yes, you can run unit tests and view the results directly
+          within
+          the
+          app.
+          The integrated testing features allow for a streamlined .</p>
+      </div>
+      <div class="flex items-center">
+        <div>
+          <div class="flex gap-10 bg-[#797DFC1A] border-[#797DFC] border rounded-3xl p-10">
+            <div class="w-20 h-20 rounded-2xl  bg-white relative"> <span
+                class="absolute w-4 h-4 -right-1 -top-1 border-2 border-white  bg-green-600 rounded-full"></span><img
+                src="#" alt="">
+            </div>
+            <div class="space-y-5">
+              <div class="flex items-center gap-4 !mb-3 font-medium text-[#12132DCC]">
+                <h4>#<span>Comedy</span></h4>
+                <h4>Author : <span>Awlad Hossain</span></h4>
+              </div>
+              <h2 class="text-xl font-bold">10 Kids Unaware of Their Halloween Costume</h2>
+              <p class="text-gray-500">It’s one thing to subject yourself to ha Halloween costume mishap because, hey
+                that’s your prerogative
+              </p>
+              <hr class="border-gray-300 border-b-2 border-t-0 border-dashed">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4 text-gray-500 text-lg">
+                  <h4 class="space-x-4"><span class="text-2xl"><i
+                        class="fa-light fa-message-lines"></i></span>560<span></span></h4>
+                  <h4 class="space-x-4"><span class="text-2xl"><i class="fa-light fa-eye"></i></span><span>1,568</span>
+                  </h4>
+                  <h4 class="space-x-4"><span class="text-2xl"><i class="fa-light fa-clock"></i></span><span>5 mins
+                      ago</span></h4>
+                </div>
+                <div
+                  class="flex items-center cursor-pointer text-white text-lg justify-center w-8 h-8 rounded-full bg-[#10B981] pb-[2px]">
+                  <i class="fa-solid fa-envelope-open"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-[#12132D0D] p-6 rounded-3xl">
+          <div class="flex justify-between gap-28">
+            <h2 class="text-xl font-bold">Title</h2>
+            <p><span><i class="fa-regular fa-check-double"></i></span> Mark as read (<span>4</span>)</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
 
 </body>
 
