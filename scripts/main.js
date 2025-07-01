@@ -55,10 +55,13 @@ export function getAllPosts(data) {
 
 function markAsReadPosts(title, viewCount) {
   const markAsRead = getidCall("markAsRead");
+  const markAsReadCount = getidCall("markAsReadCount");
   markAsRead.innerHTML += `<div class="flex w-full items-center justify-between p-3 bg-white rounded-2xl">
                 <h1 class="w-56">${title}</h1>
                 <h4 class="space-x-3"><span class="text-xl"><i class="fa-light fa-eye"></i></span><span>${viewCount}</span>
               </div>`;
+  // Update the count of marked as read posts
+  markAsReadCount.textContent++;
 }
 
 window.markAsReadPosts = markAsReadPosts;
