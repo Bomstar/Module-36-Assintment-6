@@ -2,8 +2,10 @@ import { getidCall } from "./util/idCall.js";
 import { dataLoader } from "./util/dataFetch.js";
 
 dataLoader(getAllPosts);
-const allPosts = getidCall("allPosts");
+
 export function getAllPosts(data) {
+  const allPosts = getidCall("allPosts");
+
   const posts = data.posts;
   console.log(posts);
 
@@ -11,10 +13,10 @@ export function getAllPosts(data) {
     allPosts.innerHTML += `<div class="flex gap-10 bg-[#797DFC1A] border-[#797DFC] border rounded-3xl p-10">
             <div>
               <div class="w-16 h-16 rounded-2xl  bg-white relative"> <span
-                  class="absolute w-4 h-4 -right-1 -top-1 border-2 border-white ${
+                  class="absolute  w-4 h-4 -right-1 -top-1 border-2 border-white ${
                     post.isActive ? "bg-green-600" : "bg-red-600"
-                  } rounded-full"></span><img
-                  src="#" alt="">
+                  } rounded-full"></span><img class="w-full h-full object-cover rounded-2xl"
+                  src="${post.image}" alt="">
               </div>
             </div>
             <div class="space-y-5 w-full">
@@ -28,18 +30,35 @@ export function getAllPosts(data) {
               <div class="flex items-center justify-between">
                 <div class="flex items-center gap-5 text-gray-500 text-lg">
                   <h4 class="space-x-3"><span class="text-2xl"><i
-                        class="fa-light fa-message-lines"></i></span>560<span></span></h4>
-                  <h4 class="space-x-3"><span class="text-xl"><i class="fa-light fa-eye"></i></span><span>1,568</span>
+                        class="fa-light fa-message-lines"></i></span>${
+                          post.comment_count
+                        }<span></span></h4>
+                  <h4 class="space-x-3"><span class="text-xl"><i class="fa-light fa-eye"></i></span><span>${
+                    post.view_count
+                  }</span>
                   </h4>
-                  <h4 class="space-x-3"><span class="text-2xl"><i class="fa-light fa-clock"></i></span><span>5 mins
-                      ago</span></h4>
+                  <h4 class="space-x-3"><span class="text-2xl"><i class="fa-light fa-clock"></i></span><span>${
+                    post.posted_time
+                  } mins ago</span></h4>
                 </div>
-                <div
+                <button onclick="markAsReadPosts('${post.title}', ${
+      post.view_count
+    })"
                   class="flex items-center cursor-pointer text-white text-lg justify-center w-8 h-8 rounded-full bg-[#10B981] pb-[2px]">
                   <i class="fa-solid fa-envelope-open"></i>
-                </div>
+                </button>
               </div>
             </div>
           </div>`;
   });
 }
+
+function markAsReadPosts(title, viewCount) {
+  const markAsRead = getidCall("markAsRead");
+  markAsRead.innerHTML += `<div class="flex w-full items-center justify-between p-3 bg-white rounded-2xl">
+                <h1 class="w-56">${title}</h1>
+                <h4 class="space-x-3"><span class="text-xl"><i class="fa-light fa-eye"></i></span><span>${viewCount}</span>
+              </div>`;
+}
+
+window.markAsReadPosts = markAsReadPosts;
