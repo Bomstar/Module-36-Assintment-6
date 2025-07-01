@@ -1,7 +1,7 @@
 import { dataLoader, lpDataLoader } from "./util/dataFetch.js";
 import { getidCall } from "./util/idCall.js";
 
-const allPosts = getidCall("allPosts");
+export const allPosts = getidCall("allPosts");
 const searchButton = getidCall("searchButton");
 const markAsRead = getidCall("markAsRead");
 
@@ -80,7 +80,7 @@ function markAsReadPosts(title, viewCount) {
 }
 
 // This function is called when the page loads to fetch and display Latest posts.
-const latestPosts = getidCall("latestPosts");
+export const latestPosts = getidCall("latestPosts");
 
 lpDataLoader(getLatestPosts);
 export function getLatestPosts(data) {

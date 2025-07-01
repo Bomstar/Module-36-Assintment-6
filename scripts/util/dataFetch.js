@@ -1,4 +1,5 @@
 import { getidCall } from "./idCall.js";
+import { allPosts, latestPosts } from "../main.js";
 
 const loading = getidCall("loading");
 
@@ -18,7 +19,13 @@ export async function dataLoader(getAllPosts, searchValue = "") {
       getAllPosts(data);
     }, 2000);
   } catch (error) {
-    console.error("Error fetching data:", error);
+    setTimeout(() => {
+      loading.style.display = "none";
+      allPosts.style.display = "block";
+      allPosts.innerHTML =
+        "<div class='text-center col-span-3 text-2xl font-bold text-gray-500'>Error fetching data. Please try again later.</div>";
+      console.error("Error fetching data:", error);
+    }, 2000);
   }
 }
 
@@ -38,6 +45,11 @@ export async function lpDataLoader(getLatestPosts) {
       getLatestPosts(data);
     }, 2000);
   } catch (error) {
-    console.error("Error fetching data:", error);
+    setTimeout(() => {
+      loading2.style.display = "none";
+      latestPosts.innerHTML =
+        "<div class='text-center col-span-3 text-2xl font-bold text-gray-500'>Error fetching data. Please try again later.</div>";
+      console.error("Error fetching data:", error);
+    }, 2000);
   }
 }

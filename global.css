@@ -9,8 +9,7 @@ h2 {
   height: 48px;
   background: #00bcff;
   transform: rotateX(65deg) rotate(45deg);
-  /* // remove bellows command for perspective change
-  //transform: perspective(200px) rotateX(65deg) rotate(45deg); */
+  /* transform: perspective(200px) rotateX(65deg) rotate(45deg); */
   color: rgba(160, 160, 160, 0.7);
   animation: layers1 1s linear infinite alternate;
 }
