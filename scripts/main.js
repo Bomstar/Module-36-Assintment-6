@@ -1,11 +1,22 @@
-import { getidCall } from "./util/idCall.js";
 import { dataLoader } from "./util/dataFetch.js";
+import { getidCall } from "./util/idCall.js";
 
-dataLoader(getAllPosts);
+const allPosts = getidCall("allPosts");
+const searchButton = getidCall("searchButton");
+
+// serchButton is the button that triggers the search functionality.
+searchButton.addEventListener("click", () => {
+  const searchInput = getidCall("searchInput");
+  const searchValue = searchInput.value.trim();
+  console.log(searchValue);
+  allPosts.innerHTML = "";
+
+  dataLoader(getAllPosts, searchValue);
+});
+
+dataLoader(getAllPosts, "");
 
 export function getAllPosts(data) {
-  const allPosts = getidCall("allPosts");
-
   const posts = data.posts;
   console.log(posts);
 
